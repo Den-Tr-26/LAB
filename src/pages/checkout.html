@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodly — Кошик та оформлення замовлення</title>
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Шапка сайту -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="header-left">
+                <div class="logo">
+                    <i class="fa-solid fa-utensils"></i> <span>Foodly</span>
+                </div>
+                <div class="location-picker">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Київ, вул. Хрещатик, 12</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+            </div>
+            
+            <div class="search-bar-mini">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Пошук страв, ресторанів...">
+            </div>
+
+            <div class="header-actions">
+                <button class="icon-btn"><i class="fa-regular fa-user"></i></button>
+                <button class="icon-btn"><i class="fa-regular fa-heart"></i></button>
+                <button class="icon-btn cart-btn">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span class="cart-badge">3</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container checkout-layout">
+        
+        <!-- Ліві колонка: Кошик -->
+        <section class="cart-section">
+            <div class="cart-header-title">
+                <h2>Кошик</h2>
+                <span class="cart-subtitle">3 товари • 745 ₴</span>
+                <button class="clear-cart-btn"><i class="fa-regular fa-trash-can"></i> Очистити кошик</button>
+            </div>
+
+            <div class="cart-items-list">
+                <!-- Товар 1 -->
+                <div class="cart-item">
+                    <div class="cart-item-img">
+                        <span class="tag-hit">Хіт</span>
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=200&q=80" alt="Піца">
+                    </div>
+                    <div class="cart-item-details">
+                        <h4>Піца Маргарита</h4>
+                        <p class="item-spec">Тонке тісто, 450 г</p>
+                        <div class="item-price-row">
+                            <span class="item-price">195 ₴</span>
+                            <div class="qty-control">
+                                <button class="qty-btn">-</button>
+                                <span>1</span>
+                                <button class="qty-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="remove-item-btn"><i class="fa-regular fa-trash-can"></i></button>
+                </div>
+
+                <!-- Товар 2 -->
+                <div class="cart-item">
+                    <div class="cart-item-img">
+                        <img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=200&q=80" alt="Паста">
+                    </div>
+                    <div class="cart-item-details">
+                        <h4>Паста Карбонара</h4>
+                        <p class="item-spec">350 г</p>
+                        <div class="item-price-row">
+                            <span class="item-price">210 ₴</span>
+                            <div class="qty-control">
+                                <button class="qty-btn">-</button>
+                                <span>1</span>
+                                <button class="qty-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="remove-item-btn"><i class="fa-regular fa-trash-can"></i></button>
+                </div>
+
+                <!-- Товар 3 -->
+                <div class="cart-item">
+                    <div class="cart-item-img">
+                        <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=200&q=80" alt="Тірамісу">
+                    </div>
+                    <div class="cart-item-details">
+                        <h4>Тірамісу</h4>
+                        <p class="item-spec">150 г</p>
+                        <div class="item-price-row">
+                            <span class="item-price">120 ₴</span>
+                            <div class="qty-control">
+                                <button class="qty-btn">-</button>
+                                <span>1</span>
+                                <button class="qty-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="remove-item-btn"><i class="fa-regular fa-trash-can"></i></button>
+                </div>
+            </div>
+
+            <!-- Промокод -->
+            <div class="promo-code-box">
+                <span>У вас є промокод?</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+
+            <!-- Підсумок кошика -->
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Товари (3)</span>
+                    <span>525 ₴</span>
+                </div>
+                <div class="summary-row">
+                    <span>Доставка</span>
+                    <span class="free">Безкоштовно</span>
+                </div>
+                <div class="summary-row discount">
+                    <span>Знижка</span>
+                    <span>-50 ₴</span>
+                </div>
+                <div class="summary-row total">
+                    <span>До сплати</span>
+                    <span>475 ₴</span>
+                </div>
+            </div>
+
+            <button class="btn-checkout">Оформити замовлення &rarr;</button>
+            <div class="secure-payment">
+                <i class="fa-lock fa-solid"></i> Безпечна оплата
+            </div>
+        </section>
+
+        <!-- Права колонка: Форма оформлення замовлення -->
+        <section class="order-form-section">
+            <div class="form-steps-header">
+                <h2>Оформлення замовлення</h2>
+                <div class="steps-indicators">
+                    <div class="step active">
+                        <span class="step-num">1</span>
+                        <span class="step-label">Доставка</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step">
+                        <span class="step-num">2</span>
+                        <span class="step-label">Оплата</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step">
+                        <span class="step-num">3</span>
+                        <span class="step-label">Підтвердження</span>
+                    </div>
+                </div>
+            </div>
+
+            <form class="checkout-form">
+                <h3>1. Адреса доставки</h3>
+                
+                <div class="form-group">
+                    <label><i class="fa-solid fa-location-dot"></i> Місто</label>
+                    <select class="form-control">
+                        <option>Київ</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-road"></i> Вулиця</label>
+                    <input type="text" class="form-control" value="Хрещатик">
+                </div>
+
+                <div class="form-row-grid">
+                    <div class="form-group">
+                        <label>Будинок</label>
+                        <input type="text" class="form-control" value="12">
+                    </div>
+                    <div class="form-group">
+                        <label>Квартира</label>
+                        <input type="text" class="form-control" value="34">
+                    </div>
+                    <div class="form-group">
+                        <label>Підїзд (необов'язково)</label>
+                        <input type="text" class="form-control" placeholder="Наприклад, 2">
+                    </div>
+                </div>
+
+                <div class="form-checkbox-group">
+                    <input type="checkbox" id="call-courier" checked>
+                    <label for="call-courier">Дзвонити, коли кур'єр буде поруч</label>
+                </div>
+
+                <h3 class="mt-20">2. Спосіб доставки</h3>
+                <div class="delivery-methods">
+                    <label class="delivery-card active">
+                        <input type="radio" name="delivery" checked>
+                        <div class="delivery-card-content">
+                            <i class="fa-solid fa-person-biking"></i>
+                            <div>
+                                <strong>Кур'єром</strong>
+                                <p>≈ 30-60 хв</p>
+                            </div>
+                            <span class="price-label">Безкоштовно</span>
+                        </div>
+                    </label>
+
+                    <label class="delivery-card">
+                        <input type="radio" name="delivery">
+                        <div class="delivery-card-content">
+                            <i class="fa-solid fa-store"></i>
+                            <div>
+                                <strong>Самовивіз</strong>
+                                <p>≈ 15-30 хв</p>
+                            </div>
+                            <span class="price-label">Безкоштовно</span>
+                        </div>
+                    </label>
+                </div>
+
+                <h3 class="mt-20">3. Коментар до замовлення</h3>
+                <div class="form-group">
+                    <textarea class="form-control textarea" placeholder="Наприклад: без цибулі, більше соусу, повернемо..."></textarea>
+                    <span class="char-counter">0/200</span>
+                </div>
+
+                <div class="form-footer-nav">
+                    <a href="#" class="back-link">&larr; Назад</a>
+                    <button type="submit" class="btn-primary">Далі &rarr;</button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+</body>
+</html>
