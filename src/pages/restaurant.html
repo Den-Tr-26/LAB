@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mama Mia — Меню ресторану</title>
+    <link rel="stylesheet" href="restaurant.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Шапка сайту -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="header-left">
+                <div class="logo">
+                    <i class="fa-solid fa-utensils"></i> <span>Foodly</span>
+                </div>
+                <div class="location-picker">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Київ, вул. Хрещатик, 12</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+            </div>
+            
+            <div class="search-bar-mini">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Пошук страв, ресторанів...">
+            </div>
+
+            <div class="header-actions">
+                <button class="icon-btn"><i class="fa-regular fa-user"></i></button>
+                <button class="icon-btn"><i class="fa-regular fa-heart"></i></button>
+                <button class="icon-btn cart-btn">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span class="cart-badge">3</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container main-layout">
+        
+        <!-- Верхня інформація про ресторан та банер -->
+        <section class="restaurant-hero">
+            <div class="restaurant-info-card">
+                <div class="rest-logo-wrap">
+                    <span class="rest-logo-text">MAMA MIA</span>
+                </div>
+                <div class="rest-details">
+                    <h1>Mama Mia</h1>
+                    <p class="rest-tags">Італійська • Піца • Паста • Салати</p>
+                    <div class="rest-meta">
+                        <span class="rating"><i class="fa-solid fa-star"></i> 4.8 <small>(1243 відгуки)</small></span>
+                        <span class="time"><i class="fa-regular fa-clock"></i> 30-50 хв</span>
+                    </div>
+                    <div class="rest-extra-info">
+                        <span><i class="fa-solid fa-person-biking"></i> Безкоштовна доставка від 500 ₴</span>
+                        <span><i class="fa-solid fa-location-dot"></i> Київ, вул. Саксаганського, 27</span>
+                        <span><i class="fa-regular fa-clock"></i> Працює з 10:00 до 22:00</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Рекламний бейдж на фото -->
+            <div class="promo-badge-banner">
+                <span>-15%</span>
+                <p>на всі піци<br>до 14:00</p>
+            </div>
+        </section>
+
+        <!-- Навігація по сторінці ресторану -->
+        <div class="restaurant-nav-tabs">
+            <a href="#" class="tab active">Меню</a>
+            <a href="#" class="tab">Відгуки</a>
+            <a href="#" class="tab">Інформація</a>
+        </div>
+
+        <!-- Контент з меню (Сайдбар + Сітка товарів) -->
+        <div class="menu-content-grid">
+            
+            <!-- Лівий сайдбар категорій -->
+            <aside class="menu-sidebar">
+                <a href="#" class="cat-link active"><i class="fa-solid fa-border-all"></i> Усі страви</a>
+                <a href="#" class="cat-link"><span><i class="fa-solid fa-pizza-slice"></i> Піца</span> <span class="count">12</span></a>
+                <a href="#" class="cat-link"><span><i class="fa-solid fa-bowl-food"></i> Паста</span> <span class="count">8</span></a>
+                <a href="#" class="cat-link"><span><i class="fa-solid fa-carrot"></i> Салати</span> <span class="count">7</span></a>
+                <a href="#" class="cat-link"><span><i class="fa-solid fa-cookie-bite"></i> Закуски</span> <span class="count">6</span></a>
+                <a href="#" class="cat-link"><span><i class="fa-solid fa-mug-hot"></i> Супи</span> <span class="count">4</span></a>
+                <a href="#" class="cat-link"><span><i class="fa-solid fa-utensils"></i> Гарячі страви</span> <span class="count">8</span></a>
+                <a href="#" class="cat-link"><span><i class="fa-solid fa-ice-cream"></i> Десерти</span> <span class="count">5</span></a>
+                <a href="#" class="cat-link"><span><i class="fa-solid fa-wine-glass"></i> Напої</span> <span class="count">6</span></a>
+            </aside>
+
+            <!-- Основна частина з каталогом страв -->
+            <div class="menu-catalog">
+                
+                <!-- Секція: Популярні страви -->
+                <div class="menu-section">
+                    <div class="section-header">
+                        <h2>Популярні страви</h2>
+                        <a href="#" class="see-all">Дивитися всі &gt;</a>
+                    </div>
+                    
+                    <div class="dishes-grid">
+                        <!-- Страва 1 -->
+                        <div class="dish-card">
+                            <div class="dish-img-wrap">
+                                <span class="tag-hit">Хіт</span>
+                                <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+                                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=300&q=80" alt="Піца">
+                            </div>
+                            <div class="dish-body">
+                                <h3>Піца Маргарита</h3>
+                                <p class="dish-desc">Томати, моцарела, базилік</p>
+                                <div class="dish-weight">450 г</div>
+                                <div class="dish-rating"><i class="fa-solid fa-star"></i> 4.8 <small>(342)</small></div>
+                                <div class="dish-footer">
+                                    <span class="price">195 ₴</span>
+                                    <button class="btn-add">Додати</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Страва 2 -->
+                        <div class="dish-card">
+                            <div class="dish-img-wrap">
+                                <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+                                <img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=300&q=80" alt="Паста">
+                            </div>
+                            <div class="dish-body">
+                                <h3>Паста Карбонара</h3>
+                                <p class="dish-desc">Паста, бекон, вершковий соус</p>
+                                <div class="dish-weight">350 г</div>
+                                <div class="dish-rating"><i class="fa-solid fa-star"></i> 4.7 <small>(281)</small></div>
+                                <div class="dish-footer">
+                                    <span class="price">210 ₴</span>
+                                    <button class="btn-add">Додати</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Страва 3 -->
+                        <div class="dish-card">
+                            <div class="dish-img-wrap">
+                                <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+                                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=300&q=80" alt="Цезар">
+                            </div>
+                            <div class="dish-body">
+                                <h3>Цезар з куркою</h3>
+                                <p class="dish-desc">Курка, салат, пармезан, соус</p>
+                                <div class="dish-weight">300 г</div>
+                                <div class="dish-rating"><i class="fa-solid fa-star"></i> 4.6 <small>(197)</small></div>
+                                <div class="dish-footer">
+                                    <span class="price">180 ₴</span>
+                                    <button class="btn-add">Додати</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Страва 4 -->
+                        <div class="dish-card">
+                            <div class="dish-img-wrap">
+                                <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+                                <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=300&q=80" alt="Тірамісу">
+                            </div>
+                            <div class="dish-body">
+                                <h3>Тірамісу</h3>
+                                <p class="dish-desc">Класичний італійський десерт</p>
+                                <div class="dish-weight">150 г</div>
+                                <div class="dish-rating"><i class="fa-solid fa-star"></i> 4.9 <small>(423)</small></div>
+                                <div class="dish-footer">
+                                    <span class="price">120 ₴</span>
+                                    <button class="btn-add">Додати</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Секція: Піца -->
+                <div class="menu-section">
+                    <div class="section-header">
+                        <h2>Піца</h2>
+                        <a href="#" class="see-all">Дивитися всі &gt;</a>
+                    </div>
+                    
+                    <div class="dishes-grid">
+                        <!-- Піца 1 -->
+                        <div class="dish-card">
+                            <div class="dish-img-wrap">
+                                <span class="tag-hit">Хіт</span>
+                                <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+                                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=300&q=80" alt="Маргарита">
+                            </div>
+                            <div class="dish-body">
+                                <h3>Маргарита</h3>
+                                <p class="dish-desc">Томати, моцарела, базилік</p>
+                                <div class="dish-weight">400 г</div>
+                                <div class="dish-rating"><i class="fa-solid fa-star"></i> 4.8 <small>(342)</small></div>
+                                <div class="dish-footer">
+                                    <span class="price">195 ₴</span>
+                                    <button class="btn-add">Додати</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Піца 2 -->
+                        <div class="dish-card">
+                            <div class="dish-img-wrap">
+                                <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+                                <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=300&q=80" alt="Пепероні">
+                            </div>
+                            <div class="dish-body">
+                                <h3>Пепероні</h3>
+                                <p class="dish-desc">Ковбаса пепероні, моцарела</p>
+                                <div class="dish-weight">460 г</div>
+                                <div class="dish-rating"><i class="fa-solid fa-star"></i> 4.7 <small>(256)</small></div>
+                                <div class="dish-footer">
+                                    <span class="price">220 ₴</span>
+                                    <button class="btn-add">Додати</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Піца 3 -->
+                        <div class="dish-card">
+                            <div class="dish-img-wrap">
+                                <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+                                <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=300&q=80" alt="4 сири">
+                            </div>
+                            <div class="dish-body">
+                                <h3>4 сири</h3>
+                                <p class="dish-desc">Моцарела, дорблю, пармезан...</p>
+                                <div class="dish-weight">450 г</div>
+                                <div class="dish-rating"><i class="fa-solid fa-star"></i> 4.6 <small>(201)</small></div>
+                                <div class="dish-footer">
+                                    <span class="price">240 ₴</span>
+                                    <button class="btn-add">Додати</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Піца 4 -->
+                        <div class="dish-card">
+                            <div class="dish-img-wrap">
+                                <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+                                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=300&q=80" alt="З шинкою та грибами">
+                            </div>
+                            <div class="dish-body">
+                                <h3>З шинкою та грибами</h3>
+                                <p class="dish-desc">Шинка, печериці, моцарела</p>
+                                <div class="dish-weight">470 г</div>
+                                <div class="dish-rating"><i class="fa-solid fa-star"></i> 4.5 <small>(178)</small></div>
+                                <div class="dish-footer">
+                                    <span class="price">215 ₴</span>
+                                    <button class="btn-add">Додати</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,448 @@
+/* Базові стилі */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Шапка сайту */
+.header {
+    background: #fff;
+    border-bottom: 1px solid #eaeaea;
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff5722;
+}
+
+.location-picker {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #333;
+    background: #f1f3f5;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.location-picker i:first-child {
+    color: #ff5722;
+}
+
+.search-bar-mini {
+    display: flex;
+    align-items: center;
+    background: #f1f3f5;
+    padding: 8px 15px;
+    border-radius: 8px;
+    width: 350px;
+    gap: 10px;
+    color: #888;
+}
+
+.search-bar-mini input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #333;
+    position: relative;
+    padding: 5px;
+}
+
+.cart-btn .cart-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #ff5722;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 50%;
+}
+
+/* Кнопка повернення та картка ресторану */
+.restaurant-hero {
+    margin-top: 25px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    position: relative;
+    overflow: hidden;
+    /* У реальному проєкті тут можна додати фонове зображення з градієнтом */
+}
+
+.restaurant-info-card {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.rest-logo-wrap {
+    width: 90px;
+    height: 90px;
+    background: #111;
+    color: #fff;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 1.1;
+    padding: 10px;
+    flex-shrink: 0;
+}
+
+.rest-details h1 {
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.rest-tags {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.rest-meta {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.rating {
+    color: #fbc02d;
+    font-weight: bold;
+}
+
+.rating small {
+    color: #888;
+    font-weight: normal;
+}
+
+.time {
+    color: #555;
+}
+
+.rest-extra-info {
+    display: flex;
+    gap: 20px;
+    font-size: 12px;
+    color: #777;
+}
+
+.rest-extra-info span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.promo-badge-banner {
+    background: #ff3b30;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.promo-badge-banner span {
+    font-size: 28px;
+}
+
+.promo-badge-banner p {
+    font-size: 12px;
+    line-height: 1.2;
+    text-align: left;
+}
+
+/* Навігація по ресторану (Меню, Відгуки тощо) */
+.restaurant-nav-tabs {
+    display: flex;
+    gap: 30px;
+    border-bottom: 1px solid #eaeaea;
+    margin: 25px 0;
+}
+
+.restaurant-nav-tabs .tab {
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+    padding-bottom: 12px;
+    position: relative;
+}
+
+.restaurant-nav-tabs .tab.active {
+    color: #ff5722;
+}
+
+.restaurant-nav-tabs .tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ff5722;
+}
+
+/* Меню (Сайдбар і сітка) */
+.menu-content-grid {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 30px;
+    align-items: start;
+    margin-bottom: 50px;
+}
+
+/* Сайдбар категорій */
+.menu-sidebar {
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    position: sticky;
+    top: 90px;
+}
+
+.cat-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: #444;
+    padding: 12px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+}
+
+.cat-link span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cat-link .count {
+    color: #999;
+    font-size: 12px;
+}
+
+.cat-link:hover, .cat-link.active {
+    background: #fff3f0;
+    color: #ff5722;
+}
+
+.cat-link.active .count {
+    color: #ff5722;
+}
+
+/* Секції страв */
+.menu-section {
+    margin-bottom: 40px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 20px;
+}
+
+.see-all {
+    color: #ff5722;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Сітка карток страв */
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 20px;
+}
+
+.dish-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s;
+}
+
+.dish-card:hover {
+    transform: translateY(-3px);
+}
+
+.dish-img-wrap {
+    position: relative;
+    height: 140px;
+}
+
+.dish-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tag-hit {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #ff5722;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.fav-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(255,255,255,0.8);
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+}
+
+.dish-body {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.dish-body h3 {
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.dish-desc {
+    font-size: 11px;
+    color: #777;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.dish-weight {
+    font-size: 11px;
+    color: #999;
+    margin-bottom: 6px;
+}
+
+.dish-rating {
+    font-size: 11px;
+    color: #fbc02d;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.dish-rating small {
+    color: #888;
+    font-weight: normal;
+}
+
+.dish-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn-add {
+    background: #fff3f0;
+    color: #ff5722;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-add:hover {
+    background: #ff5722;
+    color: #fff;
+}
