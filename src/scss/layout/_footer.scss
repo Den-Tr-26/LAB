@@ -1,0 +1,10 @@
+/* Підвал сайту */
+.footer {
+    background: var(--card-bg, #fff);
+    border-top: 1px solid var(--border-color, #eaeaea);
+    padding: 30px 0;
+    margin-top: auto;
+    text-align: center;
+    color: var(--text-muted, #666);
+    font-size: 14px;
+}

@@ -1,0 +1,35 @@
+/* Сітки та контейнери */
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    align-items: start;
+}
+
+.menu-content-grid {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 30px;
+    align-items: start;
+    margin-bottom: 50px;
+}
+
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 20px;
+}

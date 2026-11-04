@@ -1,0 +1,21 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.btn-primary {
+    @include m.button(v.$color-primary);
+}
+
+.btn-add {
+    background: #fff3f0;
+    color: v.$color-primary;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    &:hover {
+        background: v.$color-primary;
+        color: #fff;
+    }
+}

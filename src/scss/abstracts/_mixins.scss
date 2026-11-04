@@ -1,0 +1,27 @@
+@use "sass:color";
+@use "sass:map";
+@use "variables" as v;
+
+@mixin flex-center($gap: 0) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+}
+
+@mixin media($key) {
+  @media (max-width: map.get(v.$breakpoints, $key)) { @content; }
+}
+
+@mixin button($bg: v.$color-primary) {
+  display: inline-block;
+  padding: 10px 20px;
+  background: $bg;
+  color: #fff;
+  border: 0;
+  border-radius: v.$radius;
+  cursor: pointer;
+  transition: background .25s ease, transform .2s ease-out;
+  &:hover { background: color.adjust($bg, $lightness: -8%); transform: translateY(-2px); }
+  &:active { transform: translateY(0); }
+}

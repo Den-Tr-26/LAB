@@ -1,0 +1,28 @@
+{
+  "name": "lab_1",
+  "version": "1.0.0",
+  "description": "Наскрізний проєкт з дисципліни «WEB-програмування».  \r **Виконав:** Трошин Д. Є., група КІ-24, варіант 14.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1", "css": "sass --watch src/scss/main.scss:src/css/style.css",
+  "css:build": "sass src/scss/main.scss src/css/style.min.css --style=compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Den-Tr-26/LAB.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Den-Tr-26/LAB/issues"
+  },
+  "homepage": "https://github.com/Den-Tr-26/LAB#readme",
+  "devDependencies": {
+    "sass": "^1.106.1"
+  }
+}
