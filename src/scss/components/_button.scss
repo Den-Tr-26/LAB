@@ -14,8 +14,19 @@
     font-weight: bold;
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
+    
     &:hover {
         background: v.$color-primary;
         color: #fff;
+    }
+
+    [data-bs-theme="dark"] & {
+        background: rgba(255, 87, 34, 0.15); // М'який напівпрозорий помаранчевий фон
+        color: #ff784e;                      // Трохи світліший відтінок помаранчевого для кращої читабельності
+
+        &:hover {
+            background: v.$color-primary;
+            color: #fff;
+        }
     }
 }

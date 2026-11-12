@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mama Mia — Меню ресторану</title>
-    <link rel="stylesheet" href="../css/restaurant.css">
+    
+    <!-- Підключення Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Підключення іконок FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Ваші власні стилі -->
+    <link rel="stylesheet" href="../css/restaurant.css">
 </head>
 <body>
 
@@ -39,10 +46,18 @@
         </div>
     </header>
 
-    <main class="container main-layout">
+    <main class="container py-4">
         
+        <!-- Хлібні крихти (Breadcrumb) -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Головна</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Mama Mia</li>
+            </ol>
+        </nav>
+
         <!-- Верхня інформація про ресторан та банер -->
-        <section class="restaurant-hero">
+        <section class="restaurant-hero mb-4">
             <div class="restaurant-info-card">
                 <div class="rest-logo-wrap">
                     <span class="rest-logo-text">MAMA MIA</span>
@@ -69,201 +84,221 @@
         </section>
 
         <!-- Навігація по сторінці ресторану -->
-        <div class="restaurant-nav-tabs">
+        <div class="restaurant-nav-tabs mb-4">
             <a href="#" class="tab active">Меню</a>
             <a href="#" class="tab">Відгуки</a>
             <a href="#" class="tab">Інформація</a>
         </div>
 
-        <!-- Контент з меню (Сайдбар + Сітка товарів) -->
-        <div class="menu-content-grid">
+        <!-- Кнопка виклику фільтра для мобільних пристроїв -->
+        <button class="btn btn-outline-secondary d-lg-none mb-3" data-bs-toggle="offcanvas" data-bs-target="#filter">
+            <i class="fa-solid fa-filter me-2"></i>Фільтр категорій
+        </button>
+
+        <!-- Контент з меню: Сайдбар-фільтр + Сітка товарів -->
+        <div class="row g-4">
             
-            <!-- Лівий сайдбар категорій -->
-            <aside class="menu-sidebar">
-                <a href="#" class="cat-link active"><i class="fa-solid fa-border-all"></i> Усі страви</a>
-                <a href="#" class="cat-link"><span><i class="fa-solid fa-pizza-slice"></i> Піца</span> <span class="count">12</span></a>
-                <a href="#" class="cat-link"><span><i class="fa-solid fa-bowl-food"></i> Паста</span> <span class="count">8</span></a>
-                <a href="#" class="cat-link"><span><i class="fa-solid fa-carrot"></i> Салати</span> <span class="count">7</span></a>
-                <a href="#" class="cat-link"><span><i class="fa-solid fa-cookie-bite"></i> Закуски</span> <span class="count">6</span></a>
-                <a href="#" class="cat-link"><span><i class="fa-solid fa-mug-hot"></i> Супи</span> <span class="count">4</span></a>
-                <a href="#" class="cat-link"><span><i class="fa-solid fa-utensils"></i> Гарячі страви</span> <span class="count">8</span></a>
-                <a href="#" class="cat-link"><span><i class="fa-solid fa-ice-cream"></i> Десерти</span> <span class="count">5</span></a>
-                <a href="#" class="cat-link"><span><i class="fa-solid fa-wine-glass"></i> Напої</span> <span class="count">6</span></a>
+            <!-- Лівий сайдбар / Offcanvas для мобільних -->
+            <aside class="col-lg-3">
+                <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="filter" aria-labelledby="filterLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="filterLabel">Фільтр категорій</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#filter" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body flex-column p-3 border rounded-3 bg-white">
+                        <div class="menu-sidebar w-100">
+                            <a href="#" class="cat-link active"><i class="fa-solid fa-border-all"></i> Усі страви</a>
+                            <a href="#" class="cat-link"><span><i class="fa-solid fa-pizza-slice"></i> Піца</span> <span class="count">12</span></a>
+                            <a href="#" class="cat-link"><span><i class="fa-solid fa-bowl-food"></i> Паста</span> <span class="count">8</span></a>
+                            <a href="#" class="cat-link"><span><i class="fa-solid fa-carrot"></i> Салати</span> <span class="count">7</span></a>
+                            <a href="#" class="cat-link"><span><i class="fa-solid fa-cookie-bite"></i> Закуски</span> <span class="count">6</span></a>
+                            <a href="#" class="cat-link"><span><i class="fa-solid fa-mug-hot"></i> Супи</span> <span class="count">4</span></a>
+                            <a href="#" class="cat-link"><span><i class="fa-solid fa-utensils"></i> Гарячі страви</span> <span class="count">8</span></a>
+                            <a href="#" class="cat-link"><span><i class="fa-solid fa-ice-cream"></i> Десерти</span> <span class="count">5</span></a>
+                            <a href="#" class="cat-link"><span><i class="fa-solid fa-wine-glass"></i> Напої</span> <span class="count">6</span></a>
+                        </div>
+                        
+                        <!-- Ціновий фільтр -->
+                        <div class="mt-4 pt-3 border-top">
+                            <label for="priceRange" class="form-label fw-medium mb-1">Ціна, до (₴)</label>
+                            <input type="range" class="form-range" id="priceRange" min="50" max="600" step="10">
+                            <button class="btn btn-primary w-100 mt-2">Застосувати</button>
+                        </div>
+                    </div>
+                </div>
             </aside>
 
-            <!-- Основна частина з каталогом страв -->
-            <div class="menu-catalog">
+            <!-- Основна частина з каталогом страв і пагінацією -->
+            <div class="col-lg-9">
                 
+                <!-- Панель сортування та кількості знайдених товарів -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-secondary">Знайдено 31 страву</span>
+                    <select class="form-select w-auto">
+                        <option>За популярністю</option>
+                        <option>Спочатку дешевші</option>
+                        <option>Спочатку дорожчі</option>
+                    </select>
+                </div>
+
                 <!-- Секція: Популярні страви -->
-                <div class="menu-section">
+                <div class="menu-section mb-5">
                     <div class="section-header">
                         <h2>Популярні страви</h2>
                         <a href="#" class="see-all">Дивитися всі &gt;</a>
                     </div>
                     
-                    <div class="dishes-grid">
+                    <div class="row g-4">
                         <!-- Страва 1 -->
-                        <div class="dish-card">
-                            <div class="dish-img-wrap">
-                                <span class="tag-hit">Хіт</span>
-                                <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
-                                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=300&q=80" alt="Піца">
-                            </div>
-                            <div class="dish-body">
-                                <h3>Піца Маргарита</h3>
-                                <p class="dish-desc">Томати, моцарела, базилік</p>
-                                <div class="dish-weight">450 г</div>
-                                <div class="dish-rating"><i class="fa-solid fa-star"></i> 4.8 <small>(342)</small></div>
-                                <div class="dish-footer">
-                                    <span class="price">195 ₴</span>
-                                    <button class="btn-add">Додати</button>
+                        <div class="col-12 col-md-6 col-xl-4">
+                            <div class="dish-card h-100">
+                                <div class="dish-img-wrap">
+                                    <span class="tag-hit">Хіт</span>
+                                    <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+                                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=300&q=80" alt="Піца">
+                                </div>
+                                <div class="dish-body">
+                                    <h3>Піца Маргарита</h3>
+                                    <p class="dish-desc">Томати, моцарела, базилік</p>
+                                    <div class="dish-weight">450 г</div>
+                                    <div class="dish-rating"><i class="fa-solid fa-star"></i> 4.8 <small>(342)</small></div>
+                                    <div class="dish-footer">
+                                        <span class="price">195 ₴</span>
+                                        <!-- Кнопка відкриває модальне вікно замовлення -->
+                                        <button class="btn-add" data-bs-toggle="modal" data-bs-target="#itemModal">Додати</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Страва 2 -->
-                        <div class="dish-card">
-                            <div class="dish-img-wrap">
-                                <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
-                                <img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=300&q=80" alt="Паста">
-                            </div>
-                            <div class="dish-body">
-                                <h3>Паста Карбонара</h3>
-                                <p class="dish-desc">Паста, бекон, вершковий соус</p>
-                                <div class="dish-weight">350 г</div>
-                                <div class="dish-rating"><i class="fa-solid fa-star"></i> 4.7 <small>(281)</small></div>
-                                <div class="dish-footer">
-                                    <span class="price">210 ₴</span>
-                                    <button class="btn-add">Додати</button>
+                        <div class="col-12 col-md-6 col-xl-4">
+                            <div class="dish-card h-100">
+                                <div class="dish-img-wrap">
+                                    <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+                                    <img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=300&q=80" alt="Паста">
+                                </div>
+                                <div class="dish-body">
+                                    <h3>Паста Карбонара</h3>
+                                    <p class="dish-desc">Паста, бекон, вершковий соус</p>
+                                    <div class="dish-weight">350 г</div>
+                                    <div class="dish-rating"><i class="fa-solid fa-star"></i> 4.7 <small>(281)</small></div>
+                                    <div class="dish-footer">
+                                        <span class="price">210 ₴</span>
+                                        <button class="btn-add" data-bs-toggle="modal" data-bs-target="#itemModal">Додати</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Страва 3 -->
-                        <div class="dish-card">
-                            <div class="dish-img-wrap">
-                                <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
-                                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=300&q=80" alt="Цезар">
-                            </div>
-                            <div class="dish-body">
-                                <h3>Цезар з куркою</h3>
-                                <p class="dish-desc">Курка, салат, пармезан, соус</p>
-                                <div class="dish-weight">300 г</div>
-                                <div class="dish-rating"><i class="fa-solid fa-star"></i> 4.6 <small>(197)</small></div>
-                                <div class="dish-footer">
-                                    <span class="price">180 ₴</span>
-                                    <button class="btn-add">Додати</button>
+                        <div class="col-12 col-md-6 col-xl-4">
+                            <div class="dish-card h-100">
+                                <div class="dish-img-wrap">
+                                    <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+                                    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=300&q=80" alt="Цезар">
+                                </div>
+                                <div class="dish-body">
+                                    <h3>Цезар з куркою</h3>
+                                    <p class="dish-desc">Курка, салат, пармезан, соус</p>
+                                    <div class="dish-weight">300 г</div>
+                                    <div class="dish-rating"><i class="fa-solid fa-star"></i> 4.6 <small>(197)</small></div>
+                                    <div class="dish-footer">
+                                        <span class="price">180 ₴</span>
+                                        <button class="btn-add" data-bs-toggle="modal" data-bs-target="#itemModal">Додати</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Страва 4 -->
-                        <div class="dish-card">
-                            <div class="dish-img-wrap">
-                                <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
-                                <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=300&q=80" alt="Тірамісу">
-                            </div>
-                            <div class="dish-body">
-                                <h3>Тірамісу</h3>
-                                <p class="dish-desc">Класичний італійський десерт</p>
-                                <div class="dish-weight">150 г</div>
-                                <div class="dish-rating"><i class="fa-solid fa-star"></i> 4.9 <small>(423)</small></div>
-                                <div class="dish-footer">
-                                    <span class="price">120 ₴</span>
-                                    <button class="btn-add">Додати</button>
+                        <div class="col-12 col-md-6 col-xl-4">
+                            <div class="dish-card h-100">
+                                <div class="dish-img-wrap">
+                                    <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+                                    <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=300&q=80" alt="Тірамісу">
+                                </div>
+                                <div class="dish-body">
+                                    <h3>Тірамісу</h3>
+                                    <p class="dish-desc">Класичний італійський десерт</p>
+                                    <div class="dish-weight">150 г</div>
+                                    <div class="dish-rating"><i class="fa-solid fa-star"></i> 4.9 <small>(423)</small></div>
+                                    <div class="dish-footer">
+                                        <span class="price">120 ₴</span>
+                                        <button class="btn-add" data-bs-toggle="modal" data-bs-target="#itemModal">Додати</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Секція: Піца -->
-                <div class="menu-section">
-                    <div class="section-header">
-                        <h2>Піца</h2>
-                        <a href="#" class="see-all">Дивитися всі &gt;</a>
-                    </div>
-                    
-                    <div class="dishes-grid">
-                        <!-- Піца 1 -->
-                        <div class="dish-card">
-                            <div class="dish-img-wrap">
-                                <span class="tag-hit">Хіт</span>
-                                <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
-                                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=300&q=80" alt="Маргарита">
-                            </div>
-                            <div class="dish-body">
-                                <h3>Маргарита</h3>
-                                <p class="dish-desc">Томати, моцарела, базилік</p>
-                                <div class="dish-weight">400 г</div>
-                                <div class="dish-rating"><i class="fa-solid fa-star"></i> 4.8 <small>(342)</small></div>
-                                <div class="dish-footer">
-                                    <span class="price">195 ₴</span>
-                                    <button class="btn-add">Додати</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Піца 2 -->
-                        <div class="dish-card">
-                            <div class="dish-img-wrap">
-                                <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
-                                <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=300&q=80" alt="Пепероні">
-                            </div>
-                            <div class="dish-body">
-                                <h3>Пепероні</h3>
-                                <p class="dish-desc">Ковбаса пепероні, моцарела</p>
-                                <div class="dish-weight">460 г</div>
-                                <div class="dish-rating"><i class="fa-solid fa-star"></i> 4.7 <small>(256)</small></div>
-                                <div class="dish-footer">
-                                    <span class="price">220 ₴</span>
-                                    <button class="btn-add">Додати</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Піца 3 -->
-                        <div class="dish-card">
-                            <div class="dish-img-wrap">
-                                <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
-                                <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=300&q=80" alt="4 сири">
-                            </div>
-                            <div class="dish-body">
-                                <h3>4 сири</h3>
-                                <p class="dish-desc">Моцарела, дорблю, пармезан...</p>
-                                <div class="dish-weight">450 г</div>
-                                <div class="dish-rating"><i class="fa-solid fa-star"></i> 4.6 <small>(201)</small></div>
-                                <div class="dish-footer">
-                                    <span class="price">240 ₴</span>
-                                    <button class="btn-add">Додати</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Піца 4 -->
-                        <div class="dish-card">
-                            <div class="dish-img-wrap">
-                                <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
-                                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=300&q=80" alt="З шинкою та грибами">
-                            </div>
-                            <div class="dish-body">
-                                <h3>З шинкою та грибами</h3>
-                                <p class="dish-desc">Шинка, печериці, моцарела</p>
-                                <div class="dish-weight">470 г</div>
-                                <div class="dish-rating"><i class="fa-solid fa-star"></i> 4.5 <small>(178)</small></div>
-                                <div class="dish-footer">
-                                    <span class="price">215 ₴</span>
-                                    <button class="btn-add">Додати</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- Пагінація Bootstrap -->
+                <nav class="mt-4" aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">«</a></li>
+                        <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">»</a></li>
+                    </ul>
+                </nav>
 
             </div>
         </div>
 
     </main>
 
+    <!-- КРОК 5: Модальне вікно та форма з валідацією -->
+    <div class="modal fade" id="itemModal" tabindex="-1" aria-labelledby="itemModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="itemModalLabel">Оформлення замовлення страви</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3 needs-validation" novalidate id="orderForm">
+                        <div class="col-md-6">
+                            <label class="form-label" for="name">Ім’я</label>
+                            <input type="text" class="form-control" id="name" required minlength="3">
+                            <div class="invalid-feedback">Вкажіть ім’я (мінімум 3 символи).</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" for="phone">Телефон</label>
+                            <div class="input-group">
+                                <span class="input-group-text">+38</span>
+                                <input type="tel" class="form-control" id="phone" required pattern="[0-9]{10}">
+                                <div class="invalid-feedback">Формат: 10 цифр.</div>
+                            </div>
+                        </div>
+                        <div class="col-12 form-check ms-2">
+                            <input class="form-check-input" type="checkbox" id="agree" required>
+                            <label class="form-check-label" for="agree">Згоден з умовами доставки</label>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit">Замовити</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Підключення Bootstrap 5 JS Bundle (необхідно для роботи offcanvas, модальних вікон тощо) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Скрипт валідації форми з Кроку 5 -->
+    <script>
+        document.querySelectorAll(".needs-validation").forEach((form) => {
+            form.addEventListener("submit", (e) => {
+                if (!form.checkValidity()) { 
+                    e.preventDefault(); 
+                    e.stopPropagation(); 
+                }
+                form.classList.add("was-validated");
+            });
+        });
+    </script>
 </body>
 </html>

@@ -320,14 +320,9 @@ body {
     font-weight: 500;
 }
 
-/* Сітка карток страв */
-.dishes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-    gap: 20px;
-}
-
+/* Стилі для карток страв */
 .dish-card {
+    width: 100%; /* Гарантує, що картка повністю заповнює колонку Bootstrap */
     background: #fff;
     border-radius: 12px;
     overflow: hidden;
@@ -335,11 +330,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .dish-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 }
 
 .dish-img-wrap {

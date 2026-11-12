@@ -1,5 +1,6 @@
 @use "abstracts/variables";
 @use "abstracts/mixins";
+@use "custom";
 @use "base/reset";
 @use "base/typography";
 @use "layout/header";
@@ -7,4 +8,33 @@
 @use "layout/footer";
 @use "components/button";
 @use "components/card";
+@use "components/hero";
+@use "components/categories";
 @use "components/animations";
+
+[data-bs-theme="dark"] {
+  .card, .dish-card {
+    background-color: var(--bs-card-bg, #1a1a1a);
+    color: var(--bs-body-color, #e0e0e0);
+    border-color: var(--bs-border-color, #2c2c2c);
+
+    .card-body h3, .price {
+      color: #f8f9fa;
+    }
+    
+    .restaurant-name, 
+    .card-info, 
+    .card-info .time {
+      color: #adb5bd;
+    }
+  }
+
+  .header, .footer {
+    background-color: var(--bs-body-bg, #121212);
+    border-color: var(--bs-border-color, #2c2c2c);
+  }
+
+  .icon-btn {
+    color: var(--bs-body-color, #e0e0e0);
+  }
+}

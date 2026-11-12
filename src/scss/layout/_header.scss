@@ -57,9 +57,12 @@
     border: none;
     font-size: 18px;
     cursor: pointer;
-    color: var(--text-color, #333);
+    color: var(--bs-body-color, #333);
     position: relative;
     padding: 5px;
+    &:hover {
+    color: var(--bs-primary, #ff5722);
+  }
 }
 
 .cart-btn .cart-badge {
